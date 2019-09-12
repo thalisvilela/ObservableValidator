@@ -2,8 +2,7 @@
 
 [![Release](https://jitpack.io/v/thalisvilela/ObservableValidator.svg?style=flag-square?style=flat-square)](https://jitpack.io/#thalisvilela/ObservableValidator)
 
-The Data Binding Validator makes it easy and quick to validate fields in forms using data binding framework.
-
+ObservableValidator makes very easy to validate input fields using the databinding framework.
 ## Download
 
 Step 1: Add it in your root build.gradle at the end of repositories:
