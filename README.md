@@ -19,7 +19,7 @@ allprojects {
 Step 2: Add the dependency
 ```
   dependencies {
-    compile 'com.github.thalisvilela:ObservableValidator:LATEST-VERSION'
+    implementation 'com.github.thalisvilela:ObservableValidator:LATEST-VERSION'
   }
 ```
 Latest Version: [![Release](https://jitpack.io/v/thalisvilela/ObservableValidator.svg?style=flag-square?style=flat-square)](https://jitpack.io/#thalisvilela/ObservableValidator)
@@ -31,7 +31,7 @@ Latest Version: [![Release](https://jitpack.io/v/thalisvilela/ObservableValidato
 * Validate email;
 * Validate min and max (if its string check lenght, if int, well, check the value);
 * Validate "match" fields;
-* You can use [`TextInputLayout`](https://developer.android.com/reference/android/support/design/widget/TextInputLayout.html) and EditText;
+* You can use [`TextInputLayout`](https://developer.android.com/reference/android/support/design/widget/TextInputLayout.html), [`TextInputEditText`](https://developer.android.com/reference/android/support/design/widget/TextInputEditText.html) and EditText;
 
 ## Sample Use
 
@@ -71,7 +71,7 @@ class RegisterUser:BaseObservable(){
 ```
 
 ### Setting up validations on ViewModel ###
-You just have to create a new variable of  `ObservableValidator` class, passing your Observable model, BR (BindingResource) class, and then add your rules like so:
+You just have to create a new instance of  `ObservableValidator`, passing your Observable model and your `BR` (BindingResource auto generated class). Then, all you have to do is to add your rules like so:
 ```
 class RegisterViewModel : ViewModel() {
 
@@ -102,7 +102,7 @@ class RegisterViewModel : ViewModel() {
 
 ### Setting up layout xml file ###
 
-Just bind the error property of your TextInputLayout, TextInputEditText or EditText to the method `ObservableValidator.getValidation("fieldName")` 
+Just bind the error property of your `TextInputLayout`, `TextInputEditText` or `EditText`, to the method `validator.getValidation("fieldName")`. As all these widgets have the method setError by default, there's no need to create any custom `@BindingAdapter`
 
 ```
 <com.google.android.material.textfield.TextInputLayout
@@ -125,16 +125,16 @@ Just bind the error property of your TextInputLayout, TextInputEditText or EditT
 
 #### And Voilá!!! ####
 
-The validation should work as expected. you can check if all rules have passed, and force validation of all fields using:
+The validation should work as expected. you can force validation of all fields and check if all rules have passed, and  using:
 
 ```
-ObservableValidator.validator.validateAll()
+validator.validateAll()
 ```
 
 
 ## License ##
 
-    Copyright 2019-present Thalis Vilela
+    Copyright 2019-present Thalis Vilela/Umobi
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
