@@ -125,10 +125,20 @@ Just bind the error property of your `TextInputLayout`, `TextInputEditText` or `
 
 #### And Voilá!!! ####
 
-The validation should work as expected. you can force validation of all fields and check if all rules have passed, and  using:
+The validation should work as expected. You can force validation of all fields using:
 
 ```
 validator.validateAll()
+```
+You can also check if all rules have passed before continuing 
+```
+if(validator.validateAll()){
+    //All fields are valid!
+    //Proceed to the register logic
+}else{
+    //There are invalid fields!
+    //Show error message
+}
 ```
 
 
