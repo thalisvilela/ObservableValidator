@@ -19,7 +19,7 @@ allprojects {
 Step 2: Add the dependency
 ```
   dependencies {
-    compile 'com.github.Ilhasoft:data-binding-validator:LATEST-VERSION'
+    compile 'com.github.thalisvilela:ObservableValidator:LATEST-VERSION'
   }
 ```
 Latest Version: [![Release](https://jitpack.io/v/thalisvilela/ObservableValidator.svg?style=flag-square?style=flat-square)](https://jitpack.io/#thalisvilela/ObservableValidator)
