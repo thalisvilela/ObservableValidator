@@ -61,6 +61,12 @@ class ObservableValidator <T:Observable>(private val observedObject:T, private v
         return response
     }
 
+    fun clearAllErrors(){
+        validations.entries.forEach {
+            it.value?.value = null
+        }
+    }
+
     //Run all validations for this field, stop if we fail some rule
     fun validateField(propertyId: Int){
         rules[propertyId]?.forEach {
