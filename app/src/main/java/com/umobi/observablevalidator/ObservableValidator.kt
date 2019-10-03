@@ -133,7 +133,7 @@ class ObservableValidator <T:Observable>(private val observedObject:T, private v
     private fun logProperty(property:String){
         try{
             var value:String = observedObject::class.java.getMethod("get" + property.capitalize()).invoke(observedObject).toString()
-            Log.d(TAG, value)
+            //Log.d(TAG, value)
         }catch (e:Exception){
             e.printStackTrace()
         }
@@ -215,8 +215,13 @@ class ObservableValidator <T:Observable>(private val observedObject:T, private v
             }
             return false
         }
-        if(value is Int){
-
+        if(value is Boolean){
+            if(!value){
+                validations[validationRule.propertyId].also {
+                    it?.value = validationRule.message
+                }
+                return false
+            }
         }else if(value is String){
             if(value.isNullOrEmpty()){
                 validations[validationRule.propertyId].also {

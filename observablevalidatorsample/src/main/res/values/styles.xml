@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="textFieldOutlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="textFieldOutlined" parent="Widget.Design.TextInputLayout">
         <item name="android:textSize">@dimen/textFieldFont</item>
         <item name="boxCornerRadiusTopStart">@dimen/radiusComponents</item>
         <item name="boxCornerRadiusTopEnd">@dimen/radiusComponents</item>

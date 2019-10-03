@@ -18,6 +18,8 @@ class RegisterViewModel : ViewModel() {
     var validator = ObservableValidator(user.value!!, BR::class.java).apply {
         addRule("name", ValidationFlags.FIELD_REQUIRED, "Enter your name")
 
+        addRule("acceptTerms", ValidationFlags.FIELD_REQUIRED, "Aceite nossos termos")
+
         addRule("email", ValidationFlags.FIELD_REQUIRED, "Enter your email")
         addRule("email", ValidationFlags.FIELD_EMAIL, "Enter a valid email")
 

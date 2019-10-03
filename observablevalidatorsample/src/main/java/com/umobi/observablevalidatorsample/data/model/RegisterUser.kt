@@ -51,4 +51,11 @@ class RegisterUser:BaseObservable(){
             field = value
             notifyPropertyChanged(BR.passwordConfirmation)
         }
+
+    @Bindable
+    var acceptTerms:Boolean?=false
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.acceptTerms)
+        }
 }
